@@ -1,0 +1,113 @@
+{% load staticfiles %} {% load widget_tweaks %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="The main page for app FatNLazy">
+  <meta name="author" content="Keshav Potluri">
+
+  <title>FatNLazy : The app to deliver you to food.</title>
+
+  <!-- Bootstrap Core CSS -->
+  <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}" type="text/css">
+
+  <!-- Custom Fonts Google-->
+  <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
+
+  <link href='https://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
+
+  <!--Custom Fonts-->
+  <link rel="stylesheet" href="font-awesome/css/font-awesome.min.css" type="text/css">
+
+  <!-- Plugin CSS -->
+  <link rel="stylesheet" href="{% static 'css/animate.min.css' %}" type="text/css">
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="{% static 'css/creative.css' %}" type="text/css">
+
+  <!--Google Maps JS API-->
+  <script src="https://maps.googleapis.com/maps/api/js"></script>
+
+  <!--Places API-->
+  <script src="https://maps.googleapis.com/maps/api/js?sensor=false&libraries=places"></script>
+
+  <script src="{% static 'js/maps.js' %}"></script>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
+  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+<body id="page-top">
+
+  <nav id="mainNav" class="navbar navbar-default navbar-fixed-top">
+    <div class="container-fluid">
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav navbar-right">
+          <li>
+            <a class="page-scroll" href="/">Home</a>
+          </li>
+          <li>
+            <a class="page-scroll" href="/#about">About</a>
+          </li>
+          <li>
+            <a class="page-scroll" href="/#contact">Contact</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <section class="bg-primary" id="about">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-lg-offset-2 text-center">
+          <h2 class="section-heading">Enter what you would like to eat to locate nearby restaurants!!</h2>
+          <br>
+          <div id="map"></div>
+          <br>
+          <form action="#">
+            {% csrf_token %}
+            <div class="col-lg-12">
+              <div class="input-group">
+                <input type="text" id="cuisine" class="form-control" placeholder="What do you want to eat? E.g. Pizza, Salad, etc.">
+                <span class="input-group-btn">
+                  <button id="searchFood" type="button" value="search" class="btn btn-default">search</button>
+                </span>
+              </div>
+            </div>
+
+            <div class="col-lg-12">
+              <br>
+            </div>
+            <div class="col-lg-12">
+              <div class="input-group">
+                <input id="newLocation" class="form-control" type="text" placeholder="Not your current location? Enter your location.">
+                <span class="input-group-btn">
+                  <input id="changeLocation" type="button" value="change Location" class="btn btn-default">change Location</button>
+                </span>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+</body>
+
+</html>

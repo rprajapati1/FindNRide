@@ -1,0 +1,28 @@
+{% load staticfiles %}
+<html>
+
+<head>
+  <script src={% static "js/uber-api.js" %}></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+</head>
+
+<body>
+  <h1>Uber API Example</h1>
+  <img src='{% static "img/UBER_API_Button_2x_Grey_hard edge.png" %}' alt="My image"/>
+  <h2 style="font-family: 'Kaushan Script', cursive;"> Destination: </h2>
+  <div id="end_location"> </div>
+  <p> Popeye's </p>
+  </br>
+
+  <h2 style="font-family: 'Kaushan Script', cursive;"> FINDNRIDE an Uber </h2>
+
+  <div id="price1"></div>
+  <div id="price2"></div>
+  <div id="price3"></div>
+  <div id="price4"></div>
+  <div id="price5"></div>
+  <div id="price6"></div>
+
+</body>
+
+</html>

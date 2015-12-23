@@ -1,0 +1,28 @@
+{% load leaflet_tags %}
+<html>
+  <head>
+    {% leaflet_js %}
+    {% leaflet_css %}
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+    <script type="text/javascript">
+        function map_init_basic (map, options) {
+            L.marker([50.5, 30.5]).addTo(map);
+        }
+    </script>
+    <style>
+        .leaflet-container {  /* all maps */
+            width:  600px;
+            height: 400px;
+        }
+
+        #specialbigmap {
+            height: 800px;
+        }
+
+    </style>
+  </head>
+  <body>
+    <h1>Django-Leaflet</h1>
+    {% leaflet_map "yourmap" callback="window.map_init_basic" %}
+  </body>
+</html>

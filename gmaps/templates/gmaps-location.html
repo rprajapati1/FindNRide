@@ -1,0 +1,13 @@
+<html>
+  <head>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+  </head>
+  <body>
+    <h1>Find a location</h1>
+    <form action="/your-name/" method="post">
+        {% csrf_token %}
+        {{ form }}
+        <input type="submit" value="Go!" />
+    </form>
+  </body>
+</html>
